@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+
+{% block navbar %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand">Vehículos</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a id="inicio" class="nav-link active" aria-current="page" href="/">Inicio</a>
+            </li>
+          {% endif %}
+          {% if user_has_perm and user_has_perm_2 %}
+              <li class="nav-item">
+                <a id="agregar" class="nav-link" href="/vehiculo/add">Agregar</a>
+              </li>
+              {% endif %}
+
+              {% if user_has_perm %}
+              <li class="nav-item">
+                <a id="listado" class="nav-link" href="/vehiculo/list">Listado</a>
+              </li>
+              {% endif %}
+        </ul>
+            {% if user.is_authenticated %}
+              <div class="nav-item">
+                <div class="nav-link userColor">Hola, {{user.username}}</div>
+              </div>
+              <div class="nav-item">
+                <a class="nav-link logoutColor" href="/logout">Salir</a>
+              <div>
+            {% else %}
+              <div class="nav-item">
+                <a class="nav-link loginColor" href="/login">Login</a>
+              </div>
+            {% endif %}
+      </div>
+    </div>
+  </nav>
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="contGeneral">
+        {% if user.is_authenticated %}
+            <h2 class="titulo">Bienvenid@ al portal de gestión de vehículos.</h2>
+        {% else %}
+            <h2 class="titulo acceder">Por favor, inicie sesión para acceder al portal.</h2>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+    <div class="contGeneral contFooter">
+        <p>Contacto: {{admin.email}}</p>
+        <p>Drill final Módulo 6 - Proyecto Vehículos Django&reg;</p>
+    </div>
+
+{% endblock %}

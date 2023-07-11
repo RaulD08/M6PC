@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+    <div class="contGeneral">
+        <h2 class="titulo">Formulario de registro de nuevo vehículo</h2>
+
+        <div class="formulario">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="formElement">
+                    <label>Marca: </label>
+                    {{form.marca}}
+                </div>
+                <div class="formElement">
+                    <label>Modelo: </label>
+                    {{form.modelo}}
+                </div>
+                <div class="formElement">
+                    <label>Serie carrocería: </label>
+                    {{form.serial_carroceria}}
+                </div>
+                <div class="formElement">
+                    <label>Serie motor: </label>
+                    {{form.serial_motor}}
+                </div>
+                <div class="formElement">
+                    <label>Categoría: </label>
+                    {{form.categoria}}
+                </div>
+                <div class="formElement">
+                    <label>Precio: </label>
+                    {{form.precio}}
+                </div>
+                <input type="submit" value="Enviar" class="formBtn">
+            </form>  
+        </div>
+    </div>
+
+{% endblock %}

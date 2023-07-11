@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% block content %}
+    {% load crispy_forms_tags %}
+
+    <div class="contGeneral">
+        <div class="loginSize">
+            <div class="container py-5">
+                <h1>Inicie sesión</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ login_form|crispy }}
+                    <button class="btn btn-primary" type="submit">Login</button>
+                </form>
+                <p class="text-center">
+                    Si no tienes una cuenta, regístrate <a href="/register"> aquí</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

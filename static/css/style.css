@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contBody{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.titulo{
+    font-weight: 600;
+    color: #38688f;
+    margin-top: 3%;
+    text-decoration: underline;
+}
+    .titulo.error{
+        color: crimson;
+        text-decoration: none;
+    }
+
+    .volverBtn{
+        text-decoration: none;
+        cursor: pointer;
+        font-size: large;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+
+.formulario{
+    width: 30%;
+    min-width: 400px;
+    height: fit-content;
+    background-color: hsl(0, 0%, 98%);
+    border: 3px solid #38688f;
+    border-radius: 8px;
+    padding: 1%;
+    margin-top: 2.5%;
+}
+    .formElement{
+        margin: 3% 6%;
+        display: flex;
+        justify-content: space-between;
+    }
+       
+    .formBtn{
+        margin-left: 78%;
+        margin-top: 4%;
+        padding: 1% 2%;
+    }
+
+.contGeneral{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.contTabla{
+    width: 80%;
+    margin-top: 2.5%;
+    margin-bottom: 8%;
+    border: 3px solid #38688f;
+    border-radius: 8px;
+    background-color: hsl(0, 0%, 98%);
+    padding: 1%;
+}
+    .tableTitles{
+        color: #38688f;
+    }
+
+.userColor{
+    color: #f0f0f0 !important;
+}
+
+#inicio, #agregar, #listado, .logoutColor, .loginColor{
+    position: relative;
+}
+    #inicio::after, #agregar::after, #listado::after, .logoutColor::after, .loginColor::after{
+        content: "";
+        width: 0%;
+        height: 2px;
+        background-color: #f5f5f5;
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: 0.3s;
+        opacity: 0;
+    }
+    #inicio:hover::after, #agregar:hover::after, #listado:hover::after, .logoutColor:hover::after, .loginColor:hover::after{
+        width: 80%;
+        opacity: 0.7;
+    }
+
+.logoutColor{
+    color: #FF6666 !important;
+}
+.logoutColor:hover{
+    color: #FF8989 !important;
+}
+    .logoutColor::after{
+        background-color: #FF6666;
+    }
+
+.loginColor{
+    color: #6C9BCF !important;
+}
+.loginColor:hover{
+    color: #A5C0DD !important;
+}
+    .loginColor::after{
+        background-color: #6C9BCF;
+    }
+
+
+.loginSize{
+    width: 40%;
+}
+
+.registerSize{
+    width: 50%;
+    margin-bottom: 8%;
+}
+
+.alert{
+    position: fixed !important;
+    top: 0 !important;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-self: center !important;
+    padding: 5px 40px !important;
+    z-index: 2;
+    animation: alerta 1s ease;
+}
+
+@keyframes alerta {
+    0%{
+        transform: translate(-50%, -50px);
+    }
+    100%{
+        transform: translate(-50%, 0);
+    }
+}
+
+.btn-close{
+    padding: 10px !important;
+}
+
+
+.contFooter{
+    width: 100%;
+    background-color: #212529;
+    background-color: hsl(0, 0%, 88%);
+    color: #ffffff8c;
+    color: #212529;
+    height: 70px;
+    position: absolute;
+    bottom: 0;
+    margin-top: 100px;
+}
+.contFooter::before{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #212529, transparent);
+    position: absolute;
+    top: 0;
+}
+
+.contFooter > p{
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 651px) and (max-width: 800px) {
+    .table{
+        font-size: small;
+    }
+}
+
+@media all and (max-width: 650px) {
+    .table{
+        font-size: x-small;
+    }
+}
