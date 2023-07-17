@@ -25,6 +25,7 @@ class VehiculoModel(models.Model):
     categoria = models.CharField(max_length=20, choices=opCategoria)
     precio = models.IntegerField()
     clasificacion = models.CharField(max_length=20, blank=True)
+    imagen = models.ImageField(upload_to='vehiculos/', blank=True, null=True)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     fecha_modificacion = models.DateTimeField(auto_now=True)
     

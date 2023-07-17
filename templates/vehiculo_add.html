@@ -6,7 +6,7 @@
         <h2 class="titulo">Formulario de registro de nuevo vehículo</h2>
 
         <div class="formulario">
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="formElement">
                     <label>Marca: </label>
@@ -32,6 +32,11 @@
                     <label>Precio: </label>
                     {{form.precio}}
                 </div>
+                <div>
+                    <div class="formElementLine"><label>Imagen <span style="color: gray;">(opcional)</span>: </label></div>
+                    <div class="formElementLine">{{form.imagen}}</div>
+                </div>
+
                 <input type="submit" value="Enviar" class="formBtn">
             </form>  
         </div>

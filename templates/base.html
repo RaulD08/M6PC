@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
     <title>Drilling final M6</title>
     {% load bootstrap5 %}
         {% bootstrap_css %}
@@ -13,18 +14,22 @@
 </head>
 <body>
 
- <div class="contBody">
+    <div class="contBody">
 
-  {% block navbar %}
-  {% endblock navbar %}
+        {% block navbar %}
+        {% endblock navbar %}
 
-  {% block content %}
-  {% endblock content %}
+        {% block content %}
+        {% endblock content %}
 
-  {% block footer %}
-  {% endblock footer %}
+        {% block footer %}
+        {% endblock footer %}
 
- </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 
 </body>
 </html>

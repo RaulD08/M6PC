@@ -11,14 +11,31 @@
     background-color: #f5f5f5;
 }
 
+.navbar-brand{
+    height: 40px;
+}
+
+.nav-link{
+    max-width: fit-content;
+}
+
+.navbarIcon{
+    height: 50px;
+    transform: scaleX(-1) translateY(-10px);
+}
+
 .titulo{
     font-weight: 600;
     color: #38688f;
     margin-top: 3%;
     text-decoration: underline;
 }
+
     .titulo.error{
         color: crimson;
+        text-decoration: none;
+    }
+    .titulo.noDec{
         text-decoration: none;
     }
 
@@ -38,12 +55,20 @@
     border: 3px solid #38688f;
     border-radius: 8px;
     padding: 1%;
-    margin-top: 2.5%;
+    margin-top: 1.5%;
 }
     .formElement{
         margin: 3% 6%;
         display: flex;
         justify-content: space-between;
+    }
+    .formElementLine{
+        margin: 1% 6%;
+        display: flex;
+    }
+
+    .formElementLine input[type="file"] {
+       font-size: small;
     }
        
     .formBtn{
@@ -60,13 +85,27 @@
 }
 
 .contTabla{
-    width: 80%;
-    margin-top: 2.5%;
+    width: 70%;
+    margin-top: 1.5%;
     margin-bottom: 8%;
     border: 3px solid #38688f;
     border-radius: 8px;
     background-color: hsl(0, 0%, 98%);
     padding: 1%;
+}
+
+.imagenVehiculo{
+    max-width: 250px;
+    border-radius: 8px;
+}
+
+.popoverContent {
+    display: none;
+    position: fixed;
+    border: 3px solid hsl(207, 44%, 69%);
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    padding: 3px;
 }
     .tableTitles{
         color: #38688f;

@@ -3,38 +3,50 @@
 
 <div class="contGeneral">
 
-    <h2 class="titulo">Listado de vehículos ingresados</h2>
+    {% if datos %}
 
-    <div class="contTabla">
-        <table class="table table-hover">
-            <thead>
-                <tr class="tableTitles">
-                    <th scope="col">Marca</th>
-                    <th scope="col">Modelo</th>
-                    <th scope="col">Serial Carrocería</th>
-                    <th scope="col">Serial Motor</th>
-                    <th scope="col">Categoría</th>
-                    <th scope="col">Precio</th>
-                    <th scope="col">Condición de Precio</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for dato in datos %}
-                <tr>
-                    <td>{{dato.marca}}</td>
-                    <td>{{dato.modelo}}</td>
-                    <td>{{dato.serial_carroceria}}</td>
-                    <td>{{dato.serial_motor}}</td>
-                    <td>{{dato.categoria}}</td>
-                    <td>{{dato.precio}}</td>
-                    <td>{{dato.clasificacion}}</td>
-                  </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+        <h2 class="titulo">Listado de vehículos ingresados</h2>
+
+        <div class="contTabla">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="tableTitles">
+                        <th scope="col">Marca</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Serial Carrocería</th>
+                        <th scope="col">Serial Motor</th>
+                        <th scope="col">Categoría</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Condición de Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dato in datos %}
+                        <tr class="popoverTrigger" data-popover-id="{{ forloop.counter }}">
+                            <td>{{dato.marca}}</td>
+                            <td>{{dato.modelo}}</td>
+                            <td>{{dato.serial_carroceria}}</td>
+                            <td>{{dato.serial_motor}}</td>
+                            <td>{{dato.categoria}}</td>
+                            <td>{{dato.precio}}</td>
+                            <td>{{dato.clasificacion}}</td>
+                        </tr>
+                        
+                        {% if dato.imagen %}
+                            <div class="popoverContent" id="popover-{{ forloop.counter }}">
+                                <img class="imagenVehiculo" src='{{ dato.imagen.url }}' alt="Imagen del vehículo">
+                            </div>
+                        {% endif %}
+                        
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    {% else %}
+        <h2 class="titulo noDec">No hay datos disponibles.</h2>
+    {% endif %}
+
 </div>
-
-    
 
 {% endblock %}
