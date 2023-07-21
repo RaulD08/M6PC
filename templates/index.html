@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block navbar %}
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -42,6 +43,27 @@
       </div>
     </div>
   </nav>
+
+  <button id="btnModoOscuro" class="btnModoOscuro"></button>
+  <a href="{% url 'update_color' 'azuld' %}"><button id="color1" class="btnModoOscuro"></button></a>
+  <a href="{% url 'update_color' 'moradod' %}"><button id="color2" class="btnModoOscuro"></button></a>
+  <a href="{% url 'update_color' 'verded' %}"><button id="color3" class="btnModoOscuro"></button></a>
+  <a href="{% url 'update_color' 'azul' %}"><button id="color4" class="btnModoOscuro"></button></a>
+  <a href="{% url 'update_color' 'morado' %}"><button id="color5" class="btnModoOscuro"></button></a>
+  <a href="{% url 'update_color' 'verde' %}"><button id="color6" class="btnModoOscuro"></button></a>
+  <p class="btnModoOscuroText">Cambiar tema</p>
+
+  <style>
+      :root {
+          --color1: {{ color.color1 }};
+          --color2: {{ color.color2 }};
+          --color3: {{ color.color3 }};
+          --color4: {{ color.color4 }};
+          --color5: {{ color.color5 }};
+          --color6: {{ color.color6 }};
+      }
+
+  </style>
 
 {% endblock %}
 

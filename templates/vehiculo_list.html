@@ -23,13 +23,13 @@
                 <tbody>
                     {% for dato in datos %}
                         <tr class="popoverTrigger" data-popover-id="{{ forloop.counter }}">
-                            <td>{{dato.marca}}</td>
-                            <td>{{dato.modelo}}</td>
-                            <td>{{dato.serial_carroceria}}</td>
-                            <td>{{dato.serial_motor}}</td>
-                            <td>{{dato.categoria}}</td>
-                            <td>{{dato.precio}}</td>
-                            <td>{{dato.clasificacion}}</td>
+                            <td class="elemTabla">{{dato.marca}}</td>
+                            <td class="elemTabla">{{dato.modelo}}</td>
+                            <td class="elemTabla">{{dato.serial_carroceria}}</td>
+                            <td class="elemTabla">{{dato.serial_motor}}</td>
+                            <td class="elemTabla">{{dato.categoria}}</td>
+                            <td class="elemTabla">{{dato.precio}}</td>
+                            <td class="elemTabla">{{dato.clasificacion}}</td>
                         </tr>
                         
                         {% if dato.imagen %}

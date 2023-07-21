@@ -9,7 +9,7 @@
                 <form method="post">
                     {% csrf_token %}
                     {{ login_form|crispy }}
-                    <button class="btn btn-primary" type="submit">Login</button>
+                    <button class="btn btn-primary formBtnColor" type="submit">Login</button>
                 </form>
                 <p class="text-center">
                     Si no tienes una cuenta, regístrate <a href="/register"> aquí</a>.

@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -8,7 +9,7 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-color: #f5f5f5;
+    background-color: var(--color1);
 }
 
 .navbar-brand{
@@ -24,9 +25,90 @@
     transform: scaleX(-1) translateY(-10px);
 }
 
+.btnModoOscuro{
+    position: fixed;
+    bottom: 100px;
+    left: 30px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--color5);
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+#btnModoOscuro{
+    background: conic-gradient(#287BA4, #6F569F, #6F569F, #71C544, #71C544, #287BA4);
+    opacity: 0.6;
+    z-index: 3;
+}
+#btnModoOscuro:hover{
+    opacity: 1;
+    background: conic-gradient(
+        #71C544 0% 9.7%,
+        #6F569F 13.7% 26.4%,
+        #287BA4 30.4% 43.1%,
+        #71C544 47.1% 59.8%,
+        #6F569F 63.8% 76.5%,
+        #287BA4 80.5% 93.2%,
+        #71C544 97.2% 100%
+    );
+    transform: rotate(20deg);
+}
+
+.btnModoOscuro:hover ~ a #color1, #color1:hover{
+    transform: translate(12px, 20px);
+    border-color: steelblue;
+    background-color:  #313539;
+    opacity: 1;
+}
+.btnModoOscuro:hover ~ a #color2, #color2:hover{
+    transform: translate(23px, 0px);
+    border-color: #654E92;
+    background-color:  #313539;
+    opacity: 1;
+}
+.btnModoOscuro:hover ~ a #color3, #color3:hover{
+    transform: translate(12px, -20px);
+    border-color: yellowgreen;
+    background-color:  #313539;
+    opacity: 1;
+}
+.btnModoOscuro:hover ~ a #color4, #color4:hover{
+    transform: translate(-12px, -20px);
+    border-color: steelblue;
+    background-color: #ffffff;
+    opacity: 1;
+}
+.btnModoOscuro:hover ~ a #color5, #color5:hover{
+    transform: translate(-23px, 0px);
+    border-color: #654E92;
+    background-color: #ffffff;
+    opacity: 1;
+}
+.btnModoOscuro:hover ~ a #color6, #color6:hover{
+    transform: translate(-12px, 20px);
+    border-color: yellowgreen;
+    background-color: #ffffff;
+    opacity: 1;
+}
+.btnModoOscuroText{
+    position: fixed;
+    bottom: 140px;
+    left: 10px;
+    color: var(--color5);
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+.btnModoOscuro:hover ~ .btnModoOscuroText{
+    opacity: 1;
+}
+
 .titulo{
     font-weight: 600;
-    color: #38688f;
+    color: var(--color2);
     margin-top: 3%;
     text-decoration: underline;
 }
@@ -51,8 +133,9 @@
     width: 30%;
     min-width: 400px;
     height: fit-content;
-    background-color: hsl(0, 0%, 98%);
-    border: 3px solid #38688f;
+    background-color: var(--color4);
+    border: 3px solid var(--color2);
+    color: var(--color5);
     border-radius: 8px;
     padding: 1%;
     margin-top: 1.5%;
@@ -62,6 +145,16 @@
         display: flex;
         justify-content: space-between;
     }
+    .formElement input, select{
+        background-color: var(--color6);
+        color: var(--color5);
+        border-color: var(--color6);
+        border-radius: 5px;
+    }
+    .formElement option{
+        background-color: var(--color4);
+    }
+
     .formElementLine{
         margin: 1% 6%;
         display: flex;
@@ -88,10 +181,18 @@
     width: 70%;
     margin-top: 1.5%;
     margin-bottom: 8%;
-    border: 3px solid #38688f;
+    border: 3px solid var(--color2);
     border-radius: 8px;
-    background-color: hsl(0, 0%, 98%);
+    background-color: var(--color4);
     padding: 1%;
+}
+.elemTabla{
+    color: var(--color5);
+}
+
+.table-hover > tbody > tr:hover > *{
+    background-color: var(--color6);
+    color: var(--color3) !important;
 }
 
 .imagenVehiculo{
@@ -102,13 +203,14 @@
 .popoverContent {
     display: none;
     position: fixed;
-    border: 3px solid hsl(207, 44%, 69%);
+    border: 3px solid var(--color3);
     border-radius: 8px;
     background-color: #f5f5f5;
     padding: 3px;
+    z-index: 2;
 }
     .tableTitles{
-        color: #38688f;
+        color: var(--color2);
     }
 
 .userColor{
@@ -158,12 +260,36 @@
 
 .loginSize{
     width: 40%;
+    color: var(--color5);
+}
+.form-control{
+    background-color: var(--color4) !important;
+    border-color: var(--color2) !important;
+    color: var(--color5) !important;
 }
 
 .registerSize{
     width: 50%;
     margin-bottom: 8%;
+    color: var(--color5);
 }
+
+.formBtnColor{
+    background-color: var(--color2) !important;
+    border-color: var(--color3) !important;
+    transition: 0.3s !important;
+}
+.formBtnColor:hover{
+    filter: brightness(85%);
+}
+.formBtnColor:active{
+    filter: brightness(70%);
+}
+    .formBtn.formBtnColor{
+        border-radius: 5px;
+        border-style: solid;
+        color: #f5f5f5;
+    }
 
 .alert{
     position: fixed !important;
@@ -189,13 +315,10 @@
     padding: 10px !important;
 }
 
-
 .contFooter{
     width: 100%;
-    background-color: #212529;
-    background-color: hsl(0, 0%, 88%);
-    color: #ffffff8c;
-    color: #212529;
+    background-color: var(--color4);
+    color: var(--color5);
     height: 70px;
     position: absolute;
     bottom: 0;
@@ -205,7 +328,8 @@
     content: "";
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #212529, transparent);
+    background: linear-gradient(90deg, transparent, var(--color5), transparent);
+    opacity: 0.5;
     position: absolute;
     top: 0;
 }
@@ -215,14 +339,35 @@
     font-size: 0.9rem;
 }
 
-@media (min-width: 651px) and (max-width: 800px) {
+@media (min-width: 751px) and (max-width: 860px) {
     .table{
         font-size: small;
     }
+    .contTabla{
+        width: 80%;
+    }
+    .imagenVehiculo{
+        max-width: 200px;
+    }
 }
 
-@media all and (max-width: 650px) {
+@media all and (max-width: 750px) {
     .table{
         font-size: x-small;
+    }
+    .contTabla{
+        width: 85%;
+    }
+    .imagenVehiculo{
+        max-width: 180px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .contTabla{
+        width: 90%;
+    }
+    .imagenVehiculo{
+        max-width: 150px;
     }
 }
